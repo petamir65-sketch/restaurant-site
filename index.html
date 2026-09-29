@@ -19,7 +19,7 @@
 (function () {
   var d = document.documentElement;
   d.classList.add('js');
-  if (/[?&]shot=1/.test(location.search)) d.classList.add('shot-mode');
+  if (/[?&]shot=1/.test(location.search) || navigator.webdriver) d.classList.add('shot-mode');
 })();
 </script>
 </head>
