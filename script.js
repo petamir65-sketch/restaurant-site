@@ -164,6 +164,8 @@
     setTimeout(closeModal, 2200);
   });
 
+  if (location.hash === '#booking') openModal();
+
   /* ---------- появление блоков ---------- */
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var reveals = document.querySelectorAll('.reveal');
