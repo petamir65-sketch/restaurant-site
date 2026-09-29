@@ -15,6 +15,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="custom.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  if (/[?&]shot=1/.test(location.search)) d.classList.add('shot-mode');
+})();
+</script>
 </head>
 <body>
 

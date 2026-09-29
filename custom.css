@@ -167,8 +167,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .form-note{margin:0;font-size:.85rem;color:var(--ember)}
 
 /* ---------- появление блоков ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
-.reveal.is-in{opacity:1;transform:none}
+html.js:not(.shot-mode) .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+html.js:not(.shot-mode) .reveal.is-in{opacity:1;transform:none}
+html.shot-mode{scroll-behavior:auto}
+html.shot-mode .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+html.shot-mode .hero-scroll{animation:none}
 
 /* ---------- адаптив ---------- */
 @media (min-width:768px){
@@ -200,7 +203,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none;transition:none}
+  html.js:not(.shot-mode) .reveal{opacity:1;transform:none;transition:none}
   .hero-scroll{animation:none}
   .btn-primary:hover{transform:none}
 }
