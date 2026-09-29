@@ -170,6 +170,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 html.js:not(.shot-mode) .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 html.js:not(.shot-mode) .reveal.is-in{opacity:1;transform:none}
 html.shot-mode{scroll-behavior:auto}
+html.shot-mode .hero{min-height:760px}
 html.shot-mode .reveal{opacity:1 !important;transform:none !important;transition:none !important}
 html.shot-mode .hero-scroll{animation:none}
 
