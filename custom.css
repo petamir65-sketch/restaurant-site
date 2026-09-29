@@ -127,7 +127,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- цитата ---------- */
 .quote-section{border-block:1px solid var(--border);background:var(--secondary);padding-block:6rem}
 .quote-grid{display:grid;gap:3rem}
-.quote-ico{color:var(--primary);width:3rem;height:3rem}
+.quote-ico{color:var(--primary);width:4rem;height:auto;display:block}
 .quote-grid blockquote{margin:0;max-width:60rem;font-family:var(--font-display);font-size:clamp(1.6rem,4vw,3.5rem);font-weight:700;line-height:1.15;text-transform:uppercase}
 .quote-author{margin-top:2.5rem;display:flex;align-items:center;gap:1rem}
 .quote-author .line{width:3rem;height:1px;background:var(--primary)}
@@ -198,7 +198,7 @@ html.shot-mode .hero-scroll{animation:none}
   .story-grid{grid-template-columns:1fr 1fr;align-items:center;gap:3rem}
   .story-text{padding-left:3rem}
   .quote-grid{grid-template-columns:auto 1fr;gap:5rem;align-items:start}
-  .quote-ico{width:3.5rem;height:3.5rem}
+  .quote-ico{width:6rem}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 
