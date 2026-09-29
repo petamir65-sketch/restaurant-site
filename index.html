@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0a09">
+<title>Сырой огонь — ресторан авторской кухни</title>
+<meta name="description" content="Авторская кухня на открытом огне. Бронирование столиков, меню и история ресторана «Сырой огонь», Екатеринбург.">
+<meta property="og:title" content="Сырой огонь — ресторан авторской кухни">
+<meta property="og:description" content="Вкус, рождённый огнём. Авторская кухня, живой огонь и открытая кухня.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/steak-fire.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <a href="#top" class="brand font-display">СО<span class="dot">.</span></a>
+  <nav class="main-nav" aria-label="Основная навигация">
+    <a class="nav-link" href="#menu">Меню</a>
+    <a class="nav-link" href="#story">История</a>
+    <a class="nav-link" href="#gallery">Галерея</a>
+    <a class="nav-link" href="#contacts">Контакты</a>
+  </nav>
+  <div class="header-actions">
+    <button class="btn-ghost js-open-booking" type="button">Забронировать</button>
+    <button class="burger js-toggle-menu" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <svg class="ico-menu" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <a href="#menu" class="js-close-menu">Меню</a>
+  <a href="#story" class="js-close-menu">История</a>
+  <a href="#gallery" class="js-close-menu">Галерея</a>
+  <a href="#contacts" class="js-close-menu">Контакты</a>
+  <button class="btn-primary js-open-booking" type="button">Забронировать столик</button>
+</div>
+
+<main>
+
+  <section id="top" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/steak-fire.jpg">
+      <source src="assets/fire-kitchen.webm" type="video/webm">
+      <source src="assets/fire-kitchen.mp4" type="video/mp4">
+    </video>
+    <div class="hero-shade"></div>
+    <div class="hero-content reveal">
+      <p class="hero-eyebrow"><span class="line"></span>Авторская кухня · Екатеринбург</p>
+      <h1 class="hero-title font-display">Сырой<br><span class="accent">огонь</span></h1>
+      <div class="hero-bottom">
+        <p class="hero-tagline">Вкус, рождённый огнём</p>
+        <button class="btn-primary js-open-booking" type="button">
+          Забронировать столик
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <a href="#menu" class="hero-scroll" aria-label="Перейти к меню">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+    </a>
+  </section>
+
+  <section id="menu" class="section-shell section-pad">
+    <div class="section-number reveal">01 / Меню</div>
+    <div class="menu-grid">
+      <div class="reveal">
+        <p class="eyebrow">На острие жара</p>
+        <h2 class="section-title">Огонь —<br>наш главный<br><em>ингредиент</em></h2>
+      </div>
+
+      <div class="reveal">
+        <div class="menu-tabs" role="tablist" aria-label="Раздел меню">
+          <button class="menu-tab is-active" type="button" role="tab" aria-selected="true" data-menu="food">Кухня</button>
+          <button class="menu-tab" type="button" role="tab" aria-selected="false" data-menu="drinks">Напитки</button>
+        </div>
+
+        <div class="menu-list" data-menu-list="food">
+          <article class="menu-item"><div><h3>Говядина / уголь / смородина</h3><p>Выдержанная говядина, крем из печёного сельдерея, чёрная смородина</p></div><span class="price font-display">1 590 ₽</span></article>
+          <article class="menu-item"><div><h3>Форель / дым / щавель</h3><p>Карельская форель, масло из щавеля, копчёная сметана</p></div><span class="price font-display">1 280 ₽</span></article>
+          <article class="menu-item"><div><h3>Капуста / мисо / фундук</h3><p>Молодая капуста из печи, тёмное мисо, жареный фундук</p></div><span class="price font-display">790 ₽</span></article>
+          <article class="menu-item"><div><h3>Груша / карамель / соль</h3><p>Груша на углях, солёная карамель, мороженое из топлёного молока</p></div><span class="price font-display">650 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Утка / вишня / можжевельник</h3><p>Утиная грудка, печёная вишня, соус с можжевельником</p></div><span class="price font-display">1 490 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Креветка / перец / лайм</h3><p>Креветки из печи, крем из сладкого перца, масло лайма</p></div><span class="price font-display">1 090 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Картофель / зола / икра</h3><p>Молодой картофель в золе, копчёное масло, щучья икра</p></div><span class="price font-display">860 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Шоколад / солод / дым</h3><p>Тёмный шоколад, солодовый крем, копчёная морская соль</p></div><span class="price font-display">690 ₽</span></article>
+        </div>
+
+        <div class="menu-list" data-menu-list="drinks" hidden>
+          <article class="menu-item"><div><h3>Смородина / можжевельник</h3><p>Чёрная смородина, можжевеловый кордиал, содовая</p></div><span class="price font-display">490 ₽</span></article>
+          <article class="menu-item"><div><h3>Груша / дым / вербена</h3><p>Печёная груша, лимонная вербена, копчёный чай</p></div><span class="price font-display">520 ₽</span></article>
+          <article class="menu-item"><div><h3>Томат / перец / соль</h3><p>Томатный кордиал, сладкий перец, морская соль</p></div><span class="price font-display">490 ₽</span></article>
+          <article class="menu-item"><div><h3>Яблоко / щавель / мёд</h3><p>Зелёное яблоко, щавель, фермерский мёд</p></div><span class="price font-display">470 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Рислинг</h3><p>Сухое белое · Германия · 125 мл</p></div><span class="price font-display">790 ₽</span></article>
+          <article class="menu-item menu-extra" hidden><div><h3>Пино нуар</h3><p>Сухое красное · Россия · 125 мл</p></div><span class="price font-display">850 ₽</span></article>
+        </div>
+
+        <button class="menu-more js-menu-more" type="button">
+          <span class="label">Смотреть полное меню</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-shell">
+      <div class="section-number reveal">Визуальный дневник / 04 кадра</div>
+      <div class="gallery-intro reveal">
+        <p class="eyebrow">Огонь крупным планом</p>
+        <h2 class="section-title">Не декор.<br><em>Стихия.</em></h2>
+      </div>
+
+      <div class="gallery-viewer reveal" tabindex="0" aria-label="Фотогалерея ресторана">
+        <div class="gallery-stage">
+          <img id="gallery-img" src="assets/gallery-flame.jpg" alt="Повар готовит блюдо на открытом огне">
+          <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Предыдущая фотография">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          </button>
+          <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Следующая фотография">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 5 7 7-7 7"/><path d="M5 12h14"/></svg>
+          </button>
+        </div>
+        <div class="gallery-meta">
+          <div class="gallery-count font-display"><strong id="gallery-index">01</strong><span>/ 04</span></div>
+          <div class="gallery-text">
+            <h3 id="gallery-title">Живой огонь</h3>
+            <p id="gallery-note">Высокая температура. Чистый вкус.</p>
+          </div>
+          <div class="gallery-dots" id="gallery-dots" aria-label="Выбрать фотографию"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="section-shell section-pad">
+    <div class="section-number reveal">02 / История</div>
+    <div class="story-grid">
+      <div class="story-media reveal">
+        <img src="assets/open-kitchen.jpg" alt="Шеф-повар работает у открытого гриля">
+        <span class="story-badge font-display">С 2021 года</span>
+      </div>
+      <div class="story-text reveal">
+        <p class="eyebrow">Честность продукта</p>
+        <h2 class="section-title">Мы не прячем<br><em>кухню</em></h2>
+        <p class="lead">В центре зала — открытый очаг. Здесь нет границы между поваром и гостем: вы видите, как пламя, дым и время меняют вкус каждого продукта.</p>
+        <p>Мы работаем с локальными фермерами, меняем меню вслед за сезоном и оставляем в тарелке только то, что действительно важно.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="section-shell quote-grid">
+      <svg class="quote-ico" viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 1-2 2 1 1 0 0 0-1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 1-2 2 1 1 0 0 0-1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+      <div class="reveal">
+        <blockquote class="font-display">«Здесь огонь — не эффект, а полноценный соавтор каждого блюда»</blockquote>
+        <div class="quote-author"><span class="line"></span><p>Алексей Морозов · ресторанный обозреватель</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacts" class="section-shell footer">
+    <div class="section-number reveal">03 / Контакты</div>
+    <div class="footer-grid">
+      <div class="reveal">
+        <h2 class="section-title">Приходите<br><em>на огонь</em></h2>
+        <button class="btn-primary js-open-booking" type="button">Забронировать столик</button>
+      </div>
+      <div class="footer-contacts reveal">
+        <div><p class="eyebrow">Адрес</p><p class="big">Екатеринбург<br>ул. Малышева, 51</p></div>
+        <div><p class="eyebrow">Время</p><p class="big">Вс–Чт: 12:00–00:00<br>Пт–Сб: 12:00–02:00</p></div>
+        <div><p class="eyebrow">Связь</p><p class="big"><a href="tel:+73430000000">+7 (343) 000-00-00</a></p></div>
+        <a class="map-link" href="https://maps.google.com/?q=Екатеринбург,+ул.+Малышева,+51" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          Открыть карту
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Сырой огонь</span>
+      <span>Авторская кухня · Екатеринбург</span>
+    </div>
+  </footer>
+
+</main>
+
+<div class="modal" id="booking-modal" hidden>
+  <div class="modal-backdrop js-close-booking"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Бронирование столика">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">Бронирование</p>
+        <h2 class="font-display">Ваш столик</h2>
+      </div>
+      <button class="modal-close js-close-booking" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form class="booking-form" id="booking-form">
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <div class="row">
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+      </div>
+      <button class="btn-primary" type="submit">Отправить заявку</button>
+      <p class="form-note" id="form-note" hidden>Спасибо! Мы перезвоним и подтвердим столик.</p>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

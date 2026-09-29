@@ -1,0 +1,206 @@
+/* Собственные стили проекта «Сырой огонь» */
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+
+body{
+  margin:0;
+  background:var(--background);
+  color:var(--foreground);
+  font-family:Manrope,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img,video{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+[hidden]{display:none !important}
+
+::selection{background:var(--primary);color:var(--primary-foreground)}
+
+/* ---------- шапка ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto;z-index:40;
+  height:5rem;display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.25rem;border-bottom:1px solid transparent;
+  backdrop-filter:blur(14px);
+  background:oklch(12% .006 45/.55);
+  transition:background .3s,border-color .3s;
+}
+.site-header.is-scrolled{border-bottom-color:var(--border);background:oklch(11% .006 45/.88)}
+
+.brand{font-family:var(--font-display);font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.brand .dot{color:var(--primary)}
+
+.main-nav{display:none;align-items:center;gap:2rem}
+.nav-link{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--foreground)}
+.nav-link:hover{color:var(--primary)}
+
+.header-actions{display:flex;align-items:center;gap:1rem}
+
+.btn-ghost{
+  display:none;border:1px solid var(--primary);color:var(--primary);
+  padding:.75rem 1.25rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  transition:background .25s,color .25s;
+}
+.btn-ghost:hover{background:var(--primary);color:var(--primary-foreground)}
+
+.burger{width:2.5rem;height:2.5rem;display:grid;place-items:center}
+.burger .ico-close{display:none}
+.burger.is-open .ico-menu{display:none}
+.burger.is-open .ico-close{display:block}
+
+.mobile-menu{
+  position:fixed;inset:0;z-index:30;
+  display:flex;flex-direction:column;justify-content:center;gap:2rem;
+  padding:2rem;background:var(--background);
+}
+.mobile-menu a{font-family:var(--font-display);font-size:clamp(2rem,11vw,3rem);font-weight:700;text-transform:uppercase}
+.mobile-menu a:hover{color:var(--primary)}
+.mobile-menu .btn-primary{align-self:flex-start}
+
+/* ---------- кнопки ---------- */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:1.1rem;
+  background:var(--primary);color:var(--primary-foreground);
+  padding:1.35rem 1.5rem;font-size:.78rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;
+  transition:transform .25s,filter .25s;
+}
+.btn-primary:hover{transform:translateY(-3px);filter:brightness(1.06)}
+
+/* ---------- первая секция ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0}
+.hero-content{position:relative;z-index:10;width:100%;padding:0 1.25rem 2.5rem}
+.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin:0 0 1.25rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--ember)}
+.hero-eyebrow .line{width:2.5rem;height:1px;background:var(--ember)}
+.hero-title{
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(4rem,18vw,15rem);line-height:.74;margin:0;max-width:12ch;
+}
+.hero-title .accent{color:var(--primary)}
+.hero-bottom{margin-top:2rem;display:flex;flex-direction:column;align-items:flex-start;gap:2rem}
+.hero-tagline{margin:0;max-width:28rem;font-size:1.25rem;color:oklch(88% .01 72)}
+.hero-scroll{
+  position:absolute;left:50%;bottom:2.75rem;transform:translateX(-50%);z-index:10;
+  display:none;color:var(--foreground);animation:hero-bounce 1.6s infinite;
+}
+@keyframes hero-bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+/* ---------- секции ---------- */
+.section-pad{padding-block:6rem}
+.section-number{margin-bottom:3.5rem}
+.menu-grid{display:grid;gap:3.5rem}
+
+.menu-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+.menu-tab.is-active,.menu-tab-active{color:var(--foreground)}
+.menu-tab.is-active:after,.menu-tab-active:after{transform:scaleX(1)}
+
+.menu-list{border-top:1px solid var(--border)}
+.menu-item{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.25rem;
+  padding:1.75rem 0;border-bottom:1px solid var(--border);
+}
+.menu-item h3{margin:0;font-size:1.05rem;font-weight:800;text-transform:uppercase;transition:color .2s}
+.menu-item:hover h3{color:var(--primary)}
+.menu-item p{margin:.5rem 0 0;max-width:36rem;font-size:.85rem;color:var(--muted-foreground)}
+.menu-item .price{font-family:var(--font-display);font-size:1.1rem;color:var(--ember);white-space:nowrap}
+.menu-more{margin-top:2rem;display:inline-flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--primary)}
+.menu-more svg{transition:transform .25s}
+.menu-more.is-open svg{transform:rotate(180deg)}
+
+/* ---------- история ---------- */
+.story-grid{display:grid;gap:3rem}
+.story-media{position:relative}
+.story-media img{display:block;width:100%;height:26rem;object-fit:cover;filter:grayscale(.2)}
+.story-badge{
+  position:absolute;right:0;bottom:-1.25rem;background:var(--primary);color:var(--primary-foreground);
+  padding:.75rem 1.25rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+}
+.story-text .lead{margin:2rem 0 0;max-width:36rem;font-size:1.1rem;line-height:1.75;color:var(--muted-foreground)}
+.story-text p:last-child{margin:1.25rem 0 0;max-width:36rem;line-height:1.75;color:var(--muted-foreground)}
+
+/* ---------- цитата ---------- */
+.quote-section{border-block:1px solid var(--border);background:var(--secondary);padding-block:6rem}
+.quote-grid{display:grid;gap:3rem}
+.quote-ico{color:var(--primary);width:3rem;height:3rem}
+.quote-grid blockquote{margin:0;max-width:60rem;font-family:var(--font-display);font-size:clamp(1.6rem,4vw,3.5rem);font-weight:700;line-height:1.15;text-transform:uppercase}
+.quote-author{margin-top:2.5rem;display:flex;align-items:center;gap:1rem}
+.quote-author .line{width:3rem;height:1px;background:var(--primary)}
+.quote-author p{margin:0;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted-foreground)}
+
+/* ---------- контакты ---------- */
+.footer{padding-block:5rem}
+.footer-grid{display:grid;gap:3.5rem}
+.footer .btn-primary{margin-top:2.5rem}
+.footer-contacts{display:grid;gap:2rem;align-content:end}
+.footer-contacts .big{margin:.5rem 0 0;font-size:1.1rem;line-height:1.5}
+.footer-contacts .big a:hover{color:var(--primary)}
+.map-link{display:flex;align-items:center;gap:.5rem;color:var(--primary);font-weight:700;font-size:.9rem}
+.map-link:hover{text-decoration:underline}
+.footer-bottom{
+  margin-top:6rem;display:flex;flex-direction:column;justify-content:space-between;gap:1rem;
+  border-top:1px solid var(--border);padding-top:1.5rem;
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-foreground);
+}
+
+/* ---------- модальное окно ---------- */
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:1rem}
+.modal-backdrop{position:absolute;inset:0;background:var(--backdrop)}
+.modal-card{position:relative;width:100%;max-width:36rem;background:var(--secondary);padding:1.75rem}
+.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.modal-head h2{margin:.35rem 0 0;font-size:2rem;font-weight:700;text-transform:uppercase}
+.modal-close{width:2.5rem;height:2.5rem;display:grid;place-items:center}
+.modal-close:hover{color:var(--primary)}
+.booking-form{margin-top:2rem;display:grid;gap:1rem}
+.booking-form input{
+  width:100%;padding:.9rem 1rem;background:var(--background);
+  border:1px solid var(--border);color:var(--foreground);font:inherit;font-size:.95rem;
+}
+.booking-form input:focus{outline:none;border-color:var(--primary)}
+.booking-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.booking-form .btn-primary{justify-content:center}
+.form-note{margin:0;font-size:.85rem;color:var(--ember)}
+
+/* ---------- появление блоков ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.is-in{opacity:1;transform:none}
+
+/* ---------- адаптив ---------- */
+@media (min-width:768px){
+  .site-header{padding:0 2.5rem}
+  .main-nav{display:flex}
+  .btn-ghost{display:block}
+  .burger{display:none}
+  .hero-content{padding:0 2.5rem 3rem}
+  .hero-title{font-size:clamp(5rem,12vw,13rem)}
+  .hero-bottom{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .hero-tagline{font-size:1.5rem}
+  .hero-scroll{display:block}
+  .section-pad{padding-block:9rem}
+  .footer{padding-block:7rem}
+  .menu-item h3{font-size:1.35rem}
+  .story-media img{height:34rem}
+  .footer-contacts{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:row}
+  .modal-card{padding:2.5rem}
+}
+@media (min-width:1024px){
+  .menu-grid{grid-template-columns:.75fr 1.25fr}
+  .story-grid{grid-template-columns:1fr 1fr;align-items:center;gap:3rem}
+  .story-text{padding-left:3rem}
+  .quote-grid{grid-template-columns:auto 1fr;gap:5rem;align-items:start}
+  .quote-ico{width:3.5rem;height:3.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-scroll{animation:none}
+  .btn-primary:hover{transform:none}
+}
